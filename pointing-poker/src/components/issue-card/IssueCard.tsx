@@ -1,11 +1,19 @@
 import React from 'react';
+import ChangeButton from '../iconButtons/ChangeButton';
+import DeleteButton from '../iconButtons/DeleteButton';
+import './issueCard.scss';
 
 export interface IIssueCard {
-  name: string;
-  priority: string;
+  info: {
+    name: string;
+    priority: string;
+  };
 }
 
-const IssueCard: React.FC<IIssueCard> = ({ name, priority }): JSX.Element => {
+const IssueCard: React.FC<IIssueCard> = (info: IIssueCard): JSX.Element => {
+  const {
+    info: { name, priority },
+  } = info || {};
   return (
     <div className="issue_card">
       <div className="issue_card_info">
@@ -13,8 +21,8 @@ const IssueCard: React.FC<IIssueCard> = ({ name, priority }): JSX.Element => {
         <p className="issue_card_info_priority">{priority}</p>
       </div>
       <div className="issue_card_controls">
-        <img src="" className="issue_card_controls_change" alt="change-img" />
-        <img src="" className="issue_card_controls_delete" alt="delete-img" />
+        <ChangeButton action={() => {}} />
+        <DeleteButton action={() => {}} />
       </div>
     </div>
   );

@@ -1,11 +1,16 @@
 import React from 'react';
+import './issueCard.scss';
 
-const NewIssueCard: React.FC = (): JSX.Element => {
+interface INewIssueCard {
+  action: () => void;
+}
+
+const NewIssueCard: React.FC<INewIssueCard> = ({ action }: INewIssueCard): JSX.Element => {
   return (
-    <div className="issue_card">
+    <button type="button" className="issue_card" onClick={() => action}>
       <p>Create new issue</p>
-      <img src="" className="issue_card_controls_add" alt="add-img" />
-    </div>
+      <img className="issue_card_image" src="./icons/plus-icon.png" alt="plus-icon" />
+    </button>
   );
 };
 

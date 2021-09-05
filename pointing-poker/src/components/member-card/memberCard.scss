@@ -5,7 +5,6 @@
   justify-content: space-around;
   width: 180px;
   height: 60px;
-  background-color: khaki;
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(116, 151, 232, 0.25);
 
@@ -31,23 +30,6 @@
 
     &_position {
       font-size: 8px;
-    }
-  }
-
-  &-delete_button-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &_image {
-      width: 20px;
-      height: 20px;
-      transition: all 0.1s linear;
-    }
-
-    &_image:hover {
-      cursor: pointer;
-      transform: scale(1.2, 1.2);
     }
   }
 }
