@@ -1,3 +1,5 @@
+@import '../../../shared/Variables.scss';
+
 .main {
   padding-bottom: 106px;
 }
@@ -8,7 +10,7 @@
   display: flex;
   margin: 0 auto;
   position: relative;
-  box-shadow: 0px 4px 4px rgba(116, 151, 232, 0.25);
+  @include box-shadow-main;
   border-radius: 10px;
   margin-bottom: 70px;
 }
@@ -21,7 +23,7 @@
   font-weight: bold;
   font-size: 70px;
   line-height: 82px;
-  text-shadow: 1px 1px 2px #55e7fb, 0 0 1em #106fd4, 0 0 0.2em #1937d8;
+  @include text-shadow-title;
 }
 
 .title {
@@ -29,12 +31,12 @@
   font-size: 70px;
   line-height: 82px;
   padding-left: 141px;
-  text-shadow: 1px 1px 2px #55e7fb, 0 0 1em #106fd4, 0 0 0.2em #1937d8;
+  @include text-shadow-title;
 }
 
 .line {
   width: 350px;
-  border: 5px solid #ffffff;
+  border: 5px solid $white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transform: rotate(340deg);
   position: absolute;
@@ -55,7 +57,7 @@ div > hr {
   font-weight: bold;
   font-size: 48px;
   line-height: 56px;
-  color: #00cddb;
+  color: $turquoise;
   margin-bottom: 50px;
 }
 
@@ -87,7 +89,7 @@ div > hr {
   font-weight: bold;
   font-size: 24px;
   line-height: 28px;
-  color: #00cddb;
+  color: $turquoise;
 }
 
 .connect-input {

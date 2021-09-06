@@ -1,3 +1,5 @@
+@import '../../shared/Variables.scss';
+
 .footer {
   width: 100%;
   background: linear-gradient(0deg, rgba(33, 0, 219, 1) 0%, rgba(0, 219, 206, 1) 100%);
@@ -33,7 +35,7 @@
 .logo-pic {
   width: 100px;
   height: 60px;
-  fill: #fff;
+  fill: $white;
 }
 
 .team {
@@ -57,7 +59,7 @@
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: $white;
 }
 
 .list-link {
@@ -72,5 +74,5 @@ a {
 }
 
 .github-pic {
-  fill: #fff;
+  fill: $white;
 }

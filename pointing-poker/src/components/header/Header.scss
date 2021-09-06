@@ -1,7 +1,9 @@
+@import '../../shared/Variables.scss';
+
 .header {
   width: 100%;
   height: 70px;
-  background: rgb(0, 219, 206);
+  background: $turquoise;
   background: linear-gradient(0deg, rgba(0, 219, 206, 1) 0%, rgba(33, 0, 219, 1) 100%);
   box-shadow: 4px 4px 14px 7px rgba(34, 60, 80, 0.11);
   margin-bottom: 80px;
@@ -36,12 +38,12 @@
 }
 
 .chat {
-  fill: #fff;
+  fill: $white;
   width: 29px;
   height: 24px;
   cursor: pointer;
 }
 
 .chat:hover {
-  fill: #55e7fb;
+  fill: $turquoise;
 }
