@@ -94,21 +94,3 @@ div > hr {
   display: flex;
   align-items: center;
 }
-
-.input-url {
-  width: 255px;
-  height: 47px;
-  border: none;
-  border: 1px solid #000;
-  border-radius: 0 0 0 10px;
-  padding-left: 15px;
-  font-size: 18px;
-  border-right: none;
-}
-
-.input-url:focus {
-  outline: 0;
-  border: 1px solid #00cddb;
-  border-radius: 0 0 0 10px;
-  border-right: none;
-}

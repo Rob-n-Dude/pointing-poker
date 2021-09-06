@@ -23,10 +23,6 @@ const Greeting: React.FC = (): JSX.Element => {
           <h2 className="start-title">Start your planning:</h2>
           <div className="start">
             <p className="create">Create session:</p>
-            {/*           <button className="default" type="button">
-            Start new game
-          </button> */}
-
             <Button textContent="Start new game" action={() => {}} styles={ButtonStyles.default} />
           </div>
           <p className="start-title or">OR:</p>
@@ -34,10 +30,8 @@ const Greeting: React.FC = (): JSX.Element => {
             Connect to lobby by <span className="url">URL:</span>
           </p>
           <div className="connect-input">
-            <input className="input-url" type="text" placeholder="URL" />
-            <button className="default" type="button">
-              Connect
-            </button>
+            <input className="input" type="text" placeholder="URL" />
+            <Button textContent="Connect" action={() => {}} styles={ButtonStyles.default} />
           </div>
         </div>
       </div>

@@ -2,8 +2,6 @@ import React from 'react';
 import ButtonStyles from '../../shared/ButtonStyles';
 import './Button.scss';
 
-/* type ButtonStyle = ' white' | ''; */
-
 interface IButton {
   textContent: string;
   action: () => void;
