@@ -1,6 +1,7 @@
 import { ChangeEvent } from 'hoist-non-react-statics/node_modules/@types/react';
 import React, { useState } from 'react';
-import CardAmount from '../../shared/cardAmounts';
+import { CardAmount, defaultCardValues } from '../../shared/cardAmounts';
+import SettingsCard from '../gameCard/SettingsCard';
 import Switcher from '../switcher/Switcher';
 import './lobbySettings.scss';
 
@@ -12,6 +13,18 @@ const LobbySettings: React.FC = () => {
     const value = event.target.value as CardAmount;
     setCardAmount(() => value);
   };
+
+  const showCardPreview = (): number[] => {
+    switch (cardAmount) {
+      case CardAmount.fibonacci:
+        return defaultCardValues.fibonacci;
+      case CardAmount.pow:
+        return defaultCardValues.pow;
+      default:
+        return defaultCardValues.custom;
+    }
+  };
+
   return (
     <form className="form">
       <p className="form-title"> Game Settings</p>
@@ -47,6 +60,11 @@ const LobbySettings: React.FC = () => {
       </div>
       {/* Продумать и отрисовать кастомный ввод значений карточек */}
       {cardAmount === CardAmount.custom ? <input type="text" /> : ''}
+      <div className="form-item">
+        {showCardPreview().map((value) => (
+          <SettingsCard value={value} key={value} />
+        ))}
+      </div>
     </form>
   );
 };
