@@ -26,7 +26,7 @@ module.exports = {
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],
     'react/prop-types': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
-    indent: ['error', 2],
+    indent: [2, 2, { SwitchCase: 1 }],
     'react/jsx-indent': ['error', 2],
     'react/jsx-indent-props': ['error', 2],
   },
