@@ -9,6 +9,7 @@ const LobbySettings: React.FC = () => {
   const [isTimer, setIsTimer] = useState<boolean>(false);
   const [cardAmount, setCardAmount] = useState<CardAmount>(CardAmount.fibonacci);
   const [customCardValues, setCustomCardValues] = useState<number[]>([]);
+  const [timerTime, setTimerTime] = useState<number>(0); // seconds
 
   const cardAmountHandler = (event: ChangeEvent<HTMLSelectElement>): void => {
     const value = event.target.value as CardAmount;
@@ -35,7 +36,19 @@ const LobbySettings: React.FC = () => {
         .join()
         .split(',')
         .map((val) => +val);
-      setCustomCardValues(cardValues);
+      console.log(cardValues);
+      setCustomCardValues(() => cardValues);
+    }
+  };
+
+  const timerTimeParser = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    const regexp = /([0-5][0-9]):[0-5][0-9]/g;
+    const regexpMatch = value.match(regexp);
+    if (regexpMatch) {
+      const timerArr = regexpMatch.join().split(':');
+      const timeInSeconds = 60 * +timerArr[0] + +timerArr[1];
+      setTimerTime(timeInSeconds);
     }
   };
 
@@ -59,7 +72,15 @@ const LobbySettings: React.FC = () => {
         <Switcher id="timer" action={() => setIsTimer(!isTimer)} />
       </div>
       {/* Отрисовать настройки таймера */}
-      {isTimer ? <div className="form-item">Timer Settings</div> : ''}
+      {isTimer ? (
+        <div className="form-item">
+          Timer Settings:
+          <p>Timer will set to {timerTime} seconds</p>
+          <input type="text" placeholder="MM:SS" onChange={timerTimeParser} />
+        </div>
+      ) : (
+        ''
+      )}
       <div className="form-item">
         Issues as list:
         <Switcher id="issues" action={() => {}} />
