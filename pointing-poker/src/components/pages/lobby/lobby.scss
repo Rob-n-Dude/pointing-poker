@@ -29,6 +29,12 @@
         flex-direction: row;
       }
     }
+
+    &-controls {
+      margin-top: 20px;
+      display: inherit;
+      justify-content: space-between;
+    }
   }
 
   &-members {

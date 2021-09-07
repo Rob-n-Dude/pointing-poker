@@ -1,8 +1,8 @@
 import { ChangeEvent } from 'hoist-non-react-statics/node_modules/@types/react';
 import React, { useState } from 'react';
-import { CardAmount, defaultCardValues } from '../../shared/cardAmounts';
-import SettingsCard from '../gameCard/SettingsCard';
-import Switcher from '../switcher/Switcher';
+import { CardAmount, defaultCardValues } from '../../../../shared/cardAmounts';
+import SettingsCard from './gameCard/SettingsCard';
+import Switcher from '../../../switcher/Switcher';
 import './lobbySettings.scss';
 
 const LobbySettings: React.FC = () => {
@@ -71,13 +71,14 @@ const LobbySettings: React.FC = () => {
         Is timer needed:
         <Switcher id="timer" action={() => setIsTimer(!isTimer)} />
       </div>
-      {/* Отрисовать настройки таймера */}
       {isTimer ? (
-        <div className="form-item">
-          Timer Settings:
-          <p>Timer will set to {timerTime} seconds</p>
-          <input type="text" placeholder="MM:SS" onChange={timerTimeParser} />
-        </div>
+        <>
+          <div className="form-item">
+            Timer Settings:
+            <input type="text" className="input input_with_border" placeholder="MM:SS" onChange={timerTimeParser} />
+          </div>
+          <p className="form-item_centering">Timer will set to {timerTime} seconds</p>
+        </>
       ) : (
         ''
       )}
@@ -93,8 +94,11 @@ const LobbySettings: React.FC = () => {
           <option value={CardAmount.custom}>{CardAmount.custom}</option>
         </select>
       </div>
-      {/* Продумать и отрисовать кастомный ввод значений карточек */}
-      {cardAmount === CardAmount.custom ? <input type="text" onChange={customCardsInputParser} /> : ''}
+      {cardAmount === CardAmount.custom ? (
+        <input className="input input_with_border form-item_centering" type="text" onChange={customCardsInputParser} />
+      ) : (
+        ''
+      )}
       <div className="form-item">
         {showCardPreview().map((value, index) => (
           <SettingsCard value={value} key={Number(value + index)} />

@@ -1,9 +1,15 @@
 import React from 'react';
 import './App.scss';
-import Lobby from './components/pages/lobby/Lobby';
+import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
 
 const App: React.FC = () => {
-  return <></>;
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
 };
 
 export default App;

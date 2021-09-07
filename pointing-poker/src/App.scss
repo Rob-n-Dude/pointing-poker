@@ -21,3 +21,13 @@
   border-radius: 0 0 0 10px;
   border-right: none;
 }
+
+.input_with_border {
+  border-right: 1px solid $black;
+}
+
+.input_with_border:focus {
+  outline: 0;
+  border: 1px solid $turquoise;
+  border-radius: 0 0 0 10px;
+}

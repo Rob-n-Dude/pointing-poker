@@ -1,8 +1,9 @@
+@import '../../shared/Variables.scss';
 .issue_card {
-  background-color: white;
+  background-color: $white;
   border: 0;
   cursor: pointer;
-  box-shadow: 0px 4px 4px rgb(116 151 232 / 25%);
+  @include box-shadow-main;
   margin: 10px;
   width: 180px;
   height: 60px;
@@ -10,6 +11,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  font-size: 17px;
 
   &_image {
     width: 20px;
@@ -26,5 +28,9 @@
   }
 
   &_controls {
+  }
+
+  &:hover {
+    @include box-shadow-main-hover;
   }
 }
