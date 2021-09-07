@@ -71,7 +71,6 @@ const LobbySettings: React.FC = () => {
         Is timer needed:
         <Switcher id="timer" action={() => setIsTimer(!isTimer)} />
       </div>
-      {/* Отрисовать настройки таймера */}
       {isTimer ? (
         <>
           <div className="form-item">
@@ -95,7 +94,6 @@ const LobbySettings: React.FC = () => {
           <option value={CardAmount.custom}>{CardAmount.custom}</option>
         </select>
       </div>
-      {/* Продумать и отрисовать кастомный ввод значений карточек */}
       {cardAmount === CardAmount.custom ? (
         <input className="input input_with_border form-item_centering" type="text" onChange={customCardsInputParser} />
       ) : (
