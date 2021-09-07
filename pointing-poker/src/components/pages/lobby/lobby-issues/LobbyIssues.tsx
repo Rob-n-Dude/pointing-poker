@@ -1,6 +1,6 @@
 import React from 'react';
-import IssueCard, { IIssueCard } from '../issue-card/IssueCard';
-import NewIssueCard from '../issue-card/newIssueCard';
+import IssueCard, { IIssueCard } from '../../../issue-card/IssueCard';
+import NewIssueCard from '../../../issue-card/newIssueCard';
 import './lobbyIssues.scss';
 
 const LobbyIssues: React.FC = (): JSX.Element => {

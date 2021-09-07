@@ -1,5 +1,7 @@
 import React from 'react';
-import MemberCard, { IMemberCard } from '../member-card/MemberCard';
+import ButtonStyles from '../../../../shared/ButtonStyles';
+import Button from '../../../button/Button';
+import MemberCard, { IMemberCard } from '../../../member-card/MemberCard';
 
 const LobbyHead: React.FC = (): JSX.Element => {
   const masterInfo: IMemberCard = {} as IMemberCard;
@@ -19,12 +21,16 @@ const LobbyHead: React.FC = (): JSX.Element => {
               type="text"
               disabled
               value={lobbyLink}
-              className="lobby-head-link_input-wrapper-input"
+              className="lobby-head-link_input-wrapper-input input input_with_border"
             />
-            <input type="submit" value="Copy" />
+            <Button textContent="Copy" action={() => {}} styles={ButtonStyles.default} />
           </div>
         </label>
       </form>
+      <div className="lobby-head-controls">
+        <Button textContent="Start Game" action={() => {}} styles={ButtonStyles.default} />
+        <Button textContent="Cancel Game" action={() => {}} styles={ButtonStyles.white} />
+      </div>
     </div>
   );
 };

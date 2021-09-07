@@ -1,5 +1,5 @@
 import React from 'react';
-import MemberCard, { IMemberCard } from '../member-card/MemberCard';
+import MemberCard, { IMemberCard } from '../../../member-card/MemberCard';
 
 const LobbyMembers: React.FC = (): JSX.Element => {
   const member = { info: { name: 'Jon', position: 'Junnior', image: '' } };
