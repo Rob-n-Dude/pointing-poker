@@ -6,7 +6,7 @@ import './createIssue.scss';
 const CreateIssue: FC = () => {
   return (
     <form className="create-issue">
-      <h2 className="create-issue_title">Creact Issue</h2>
+      <h2 className="create-issue_title">Create Issue</h2>
       <div className="create-issue-item">
         <p>Title</p>
         <input type="text" className="input input_with_border" />
