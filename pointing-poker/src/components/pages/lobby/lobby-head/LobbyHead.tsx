@@ -21,7 +21,7 @@ const LobbyHead: React.FC = (): JSX.Element => {
               type="text"
               disabled
               value={lobbyLink}
-              className="lobby-head-link_input-wrapper-input input input_with_border"
+              className="lobby-head-link_input-wrapper-input input"
             />
             <Button textContent="Copy" action={() => {}} styles={ButtonStyles.default} />
           </div>

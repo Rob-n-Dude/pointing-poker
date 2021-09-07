@@ -1,3 +1,5 @@
+@import '../../../../../shared/Variables.scss';
+
 .settings-card {
   width: 80px;
   height: 100px;
@@ -20,5 +22,5 @@
 }
 
 .settings-card:hover {
-  box-shadow: 4px 7px 4px rgb(116 151 232 / 25%);
+  @include box-shadow-main-hover;
 }
