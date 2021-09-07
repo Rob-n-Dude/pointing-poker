@@ -96,8 +96,8 @@ const LobbySettings: React.FC = () => {
       {/* Продумать и отрисовать кастомный ввод значений карточек */}
       {cardAmount === CardAmount.custom ? <input type="text" onChange={customCardsInputParser} /> : ''}
       <div className="form-item">
-        {showCardPreview().map((value) => (
-          <SettingsCard value={value} key={value} />
+        {showCardPreview().map((value, index) => (
+          <SettingsCard value={value} key={Number(value + index)} />
         ))}
       </div>
     </form>
