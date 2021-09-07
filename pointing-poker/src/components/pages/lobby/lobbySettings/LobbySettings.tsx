@@ -1,7 +1,7 @@
 import { ChangeEvent } from 'hoist-non-react-statics/node_modules/@types/react';
 import React, { useState } from 'react';
 import { CardAmount, defaultCardValues } from '../../../../shared/cardAmounts';
-import SettingsCard from '../../../gameCard/SettingsCard';
+import SettingsCard from './gameCard/SettingsCard';
 import Switcher from '../../../switcher/Switcher';
 import './lobbySettings.scss';
 
