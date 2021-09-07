@@ -8,6 +8,7 @@ import './lobbySettings.scss';
 const LobbySettings: React.FC = () => {
   const [isTimer, setIsTimer] = useState<boolean>(false);
   const [cardAmount, setCardAmount] = useState<CardAmount>(CardAmount.fibonacci);
+  const [customCardValues, setCustomCardValues] = useState<number[]>([]);
 
   const cardAmountHandler = (event: ChangeEvent<HTMLSelectElement>): void => {
     const value = event.target.value as CardAmount;
@@ -21,7 +22,20 @@ const LobbySettings: React.FC = () => {
       case CardAmount.pow:
         return defaultCardValues.pow;
       default:
-        return defaultCardValues.custom;
+        return customCardValues;
+    }
+  };
+
+  const customCardsInputParser = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    const regexp = /^(\d+(,\d{0,3}){0,5})?$/gm;
+    const regexpMatch = value.match(regexp);
+    if (regexpMatch) {
+      const cardValues = regexpMatch
+        .join()
+        .split(',')
+        .map((val) => +val);
+      setCustomCardValues(cardValues);
     }
   };
 
@@ -59,7 +73,7 @@ const LobbySettings: React.FC = () => {
         </select>
       </div>
       {/* Продумать и отрисовать кастомный ввод значений карточек */}
-      {cardAmount === CardAmount.custom ? <input type="text" /> : ''}
+      {cardAmount === CardAmount.custom ? <input type="text" onChange={customCardsInputParser} /> : ''}
       <div className="form-item">
         {showCardPreview().map((value) => (
           <SettingsCard value={value} key={value} />

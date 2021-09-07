@@ -3,10 +3,22 @@
   height: 100px;
   box-shadow: 0px 4px 4px rgb(116 151 232 / 25%);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  transition: all 0.2s linear;
+
+  &-value,
+  &-value_reverse {
+    font-size: 18px;
+  }
 
   &-value {
-    font-size: 12px;
+    &_reverse {
+      transform: rotateX(180deg);
+    }
   }
+}
+
+.settings-card:hover {
+  box-shadow: 4px 7px 4px rgb(116 151 232 / 25%);
 }

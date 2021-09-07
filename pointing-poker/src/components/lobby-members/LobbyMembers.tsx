@@ -2,7 +2,7 @@ import React from 'react';
 import MemberCard, { IMemberCard } from '../member-card/MemberCard';
 
 const LobbyMembers: React.FC = (): JSX.Element => {
-  const member = { info: { name: 'Jon', position: 'Junnior', image: 'someimage' } };
+  const member = { info: { name: 'Jon', position: 'Junnior', image: '' } };
   const members: IMemberCard[] = [member];
   const membersToRender = members.map((memberInfo: IMemberCard) => (
     <MemberCard info={memberInfo.info} key={memberInfo.info.name} />
