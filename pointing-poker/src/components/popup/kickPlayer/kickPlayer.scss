@@ -1,0 +1,20 @@
+@import '../../../shared/Variables.scss';
+.kick-player {
+  &_title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  &_text {
+    text-align: center;
+
+    &_name {
+      color: $dark-blue;
+      cursor: pointer;
+    }
+  }
+
+  &_controls {
+    display: flex;
+    justify-content: space-between;
+  }
+}
