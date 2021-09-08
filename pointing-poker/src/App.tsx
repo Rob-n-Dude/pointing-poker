@@ -10,7 +10,7 @@ const App: React.FC = () => {
   return (
     <>
       <Header />
-      <PopUp content={<CreateIssue />} />
+      <PopUp negativeAction={() => {}} positiveAction={() => {}} content={CreateIssue} />
       {/* <PopUp content={<KickPlayer user={{ name: 'Jon Sina' }} />} /> */}
       <Footer />
     </>

@@ -1,7 +1,21 @@
-export type TKickPlayer = {
-  user: any; // создать типь юзер
+export type TKickPlayer = TPopUpContent & {
+  user: TUserInfo;
 };
 
 export type TPopUp = {
-  content: JSX.Element;
+  content: React.FC<TPopUpContent>;
+  positiveAction: () => void;
+  negativeAction: () => void;
+};
+
+export type TPopUpContent = {
+  positiveAction: () => void;
+  negativeAction: () => void;
+};
+
+export type TUserInfo = {
+  name: string;
+  lastName?: string;
+  jobPosition?: string;
+  avatar: string; // | тип картинки которая вернется с серва
 };

@@ -1,7 +1,12 @@
 @import '../../../shared/Variables.scss';
 .kick-player {
+  width: 700px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
   &_title {
-    margin-bottom: 20px;
     text-align: center;
   }
   &_text {
@@ -15,6 +20,6 @@
 
   &_controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }

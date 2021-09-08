@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
 import ButtonStyles from '../../../shared/ButtonStyles';
+import { TPopUpContent } from '../../../shared/types';
 import Button from '../../button/Button';
 import './createIssue.scss';
 
-const CreateIssue: FC = () => {
+const CreateIssue: FC<TPopUpContent> = ({ positiveAction, negativeAction }) => {
   return (
     <form className="create-issue">
       <h2 className="create-issue_title">Create Issue</h2>
@@ -24,8 +25,8 @@ const CreateIssue: FC = () => {
         </select>
       </div>
       <div className="create-issue_controls">
-        <Button textContent="Yes" action={() => {}} styles={ButtonStyles.default} />
-        <Button textContent="No" action={() => {}} styles={ButtonStyles.white} />
+        <Button textContent="Yes" action={positiveAction} styles={ButtonStyles.default} />
+        <Button textContent="No" action={negativeAction} styles={ButtonStyles.white} />
       </div>
     </form>
   );
