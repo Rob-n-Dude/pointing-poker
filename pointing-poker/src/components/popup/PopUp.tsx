@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { TPopUp } from '../../shared/types';
 import './PopUp.scss';
 
+
 const PopUp: FC<TPopUp> = ({ content, negativeAction, positiveAction }) => {
   return (
     <div className="cover" onClick={() => negativeAction} role="none">
