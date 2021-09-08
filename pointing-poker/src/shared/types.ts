@@ -1,14 +1,10 @@
-export type TKickPlayer = TPopUpContent & {
-  user: TUserInfo;
-};
-
-export type TPopUp = {
+export type TPopUp = TPopUpContent & {
   content: React.FC<TPopUpContent>;
-  positiveAction: () => void;
-  negativeAction: () => void;
 };
 
 export type TPopUpContent = {
+  user?: TUserInfo;
+  userToKick?: TUserInfo;
   positiveAction: () => void;
   negativeAction: () => void;
 };
