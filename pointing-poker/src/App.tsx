@@ -7,6 +7,7 @@ const App: React.FC = () => {
   return (
     <>
       <Header />
+
       <Footer />
     </>
   );
