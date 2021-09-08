@@ -1,23 +1,19 @@
 import React from 'react';
+import { TUserInfo } from '../../shared/types';
 import DeleteButton from '../iconButtons/DeleteButton';
 import './memberCard.scss';
 
-export interface IMemberCard {
-  info: {
-    name: string;
-    position?: string;
-    image: string;
+const MemberCard: React.FC<TUserInfo> = ({ name, lastName, jobPosition, avatar }): JSX.Element => {
+  const nameParser = (): string => {
+    return `${name} ${lastName}`;
   };
-}
 
-const MemberCard: React.FC<IMemberCard> = ({ info }: IMemberCard): JSX.Element => {
-  const { image, name, position } = info || {};
   return (
     <div className="member-card">
-      <img className="member-card_img" src={image} alt={image} />
+      <img className="member-card_img" src={avatar} alt={avatar} />
       <div className="member-card-personal">
-        <p className="member-card-personal_name">{name}</p>
-        <p className="member-card-personal_position">{position}</p>
+        <p className="member-card-personal_name">{nameParser()}</p>
+        <p className="member-card-personal_position">{jobPosition}</p>
       </div>
       <DeleteButton action={() => {}} />
     </div>
