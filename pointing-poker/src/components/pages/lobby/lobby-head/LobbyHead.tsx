@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonStyles from '../../../../shared/ButtonStyles';
 import { TLobby, UserRole } from '../../../../shared/types';
 import Button from '../../../button/Button';
-import MemberCard from '../../../member-card/MemberCard';
+import LobbyMasterCard from '../../../member-card/LobbyMasterCard';
 
 const LobbyHead: React.FC<TLobby> = ({ user }): JSX.Element => {
   const lobbyLink = 'someLink';
@@ -10,7 +10,7 @@ const LobbyHead: React.FC<TLobby> = ({ user }): JSX.Element => {
     <div className="lobby-head">
       <div className="lobby-head-master_card">
         <p className="lobby-head-master_card_text"> Master: </p>
-        <MemberCard
+        <LobbyMasterCard
           name={user.name}
           lastName={user.lastName}
           jobPosition={user.jobPosition}
@@ -41,7 +41,13 @@ const LobbyHead: React.FC<TLobby> = ({ user }): JSX.Element => {
           </div>
         </>
       ) : (
-        <></>
+        <>
+          {' '}
+          <div className="lobby-head-controls">
+            <div />
+            <Button textContent="Exit" action={() => {}} styles={ButtonStyles.white} />
+          </div>
+        </>
       )}
     </div>
   );
