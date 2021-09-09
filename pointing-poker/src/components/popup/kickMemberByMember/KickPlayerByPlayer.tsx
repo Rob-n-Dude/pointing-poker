@@ -2,14 +2,15 @@ import React, { FC } from 'react';
 import ButtonStyles from '../../../shared/ButtonStyles';
 import { TPopUpContent } from '../../../shared/types';
 import Button from '../../button/Button';
-import './kickPlayer.scss';
+import '../kickPlayer/kickPlayer.scss';
 
-const KickPlayer: FC<TPopUpContent> = ({ userToKick, positiveAction, negativeAction }) => {
+const KickPlayerByPlayer: FC<TPopUpContent> = ({ user, positiveAction, negativeAction, userToKick }) => {
   return (
     <div className="kick-player">
       <h2 className="kick-player_title">Kick Player?</h2>
       <h3 className="kick-player_text">
-        Do you really want to kick <span className="kick-player_text_name">{userToKick!.name}</span>
+        <span className="kick-player_text_name">{user!.name}</span> want to kick member{' '}
+        <span className="kick-player_text_name">{userToKick!.name}</span> <br /> Do you agree with it?
       </h3>
       <div className="kick-player_controls">
         <Button textContent="Yes" action={positiveAction} styles={ButtonStyles.default} />
@@ -19,4 +20,4 @@ const KickPlayer: FC<TPopUpContent> = ({ userToKick, positiveAction, negativeAct
   );
 };
 
-export default KickPlayer;
+export default KickPlayerByPlayer;

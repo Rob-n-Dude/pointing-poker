@@ -9,7 +9,7 @@ interface IButton {
 }
 
 const Button: React.FC<IButton> = ({ textContent, action, styles }): JSX.Element => {
-  return <input className={`default${styles}`} type="button" onClick={() => action} value={textContent} />;
+  return <input className={`default${styles}`} type="button" onClick={action} value={textContent} />;
 };
 
 export default Button;

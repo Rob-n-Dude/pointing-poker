@@ -1,9 +1,8 @@
 import React from 'react';
 import { TUserInfo } from '../../shared/types';
-import DeleteButton from '../iconButtons/DeleteButton';
 import './memberCard.scss';
 
-const MemberCard: React.FC<TUserInfo> = ({ name, lastName, jobPosition, avatar }): JSX.Element => {
+const LobbyMasterCard: React.FC<TUserInfo> = ({ name, lastName, jobPosition, avatar }): JSX.Element => {
   const nameParser = (): string => {
     return `${name} ${lastName}`;
   };
@@ -15,9 +14,8 @@ const MemberCard: React.FC<TUserInfo> = ({ name, lastName, jobPosition, avatar }
         <p className="member-card-personal_name">{nameParser()}</p>
         <p className="member-card-personal_position">{jobPosition}</p>
       </div>
-      <DeleteButton action={() => {}} />
     </div>
   );
 };
 
-export default MemberCard;
+export default LobbyMasterCard;

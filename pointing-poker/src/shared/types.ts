@@ -1,14 +1,10 @@
-export type TKickPlayer = TPopUpContent & {
-  user: TUserInfo;
-};
-
-export type TPopUp = {
+export type TPopUp = TPopUpContent & {
   content: React.FC<TPopUpContent>;
-  positiveAction: () => void;
-  negativeAction: () => void;
 };
 
 export type TPopUpContent = {
+  user?: TUserInfo;
+  userToKick?: TUserInfo;
   positiveAction: () => void;
   negativeAction: () => void;
 };
@@ -18,4 +14,15 @@ export type TUserInfo = {
   lastName?: string;
   jobPosition?: string;
   avatar: string; // | тип картинки которая вернется с серва
+  role: UserRole;
+};
+
+export enum UserRole {
+  dealer = 'Dealer',
+  player = 'Player',
+  observer = 'Observer',
+}
+
+export type TLobby = {
+  user: TUserInfo;
 };
