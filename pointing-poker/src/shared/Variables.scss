@@ -4,9 +4,9 @@ $white: #ffffff;
 $black: #000000;
 $turquoise: #00cddb;
 $dark-blue: #2b3a67;
+$red: #ff0000;
 
 // main mixins of the project
-
 @mixin text-shadow-title {
   text-shadow: 1px 1px 2px #55e7fb, 0 0 1em #106fd4, 0 0 0.2em #1937d8;
 }

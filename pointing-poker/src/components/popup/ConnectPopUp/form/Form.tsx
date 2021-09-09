@@ -1,9 +1,21 @@
-import React, { FC } from 'react';
+import React, { FC, ChangeEvent, useState } from 'react';
 import ButtonStyles from '../../../../shared/ButtonStyles';
 import Button from '../../../button/Button';
 import './Form.scss';
 
 const Form: FC = () => {
+  const [firstName, setFirstName] = useState<string>('');
+
+  const validate = /^[A-Za-zа-яА-ЯёЁ]+$/;
+
+  const firstNameValidation = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    if (validate.test(value)) {
+      setFirstName(value);
+    }
+    console.log(event.target.value);
+  };
+
   return (
     <div className="form-wrap">
       <form className="form">
@@ -15,8 +27,10 @@ const Form: FC = () => {
               type="text"
               name="firstName"
               id="firstName"
-              /* value={firstName} */
+              value={firstName}
+              onChange={firstNameValidation}
             />
+            <div className="error">* Please enter your name</div>
           </label>
         </div>
         <div className="lastName">
