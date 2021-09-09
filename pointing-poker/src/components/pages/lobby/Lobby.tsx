@@ -18,9 +18,7 @@ const Lobby: React.FC<TLobby> = ({ user }): JSX.Element => {
             <LobbyIssues />
             <LobbySettings />
           </>
-        ) : (
-          <></>
-        )}
+        ) : null}
       </div>
     </>
   );
