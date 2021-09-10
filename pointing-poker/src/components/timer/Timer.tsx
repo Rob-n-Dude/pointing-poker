@@ -44,7 +44,7 @@ const Timer: FC<TTimer> = ({ secondsTotal }) => {
       <svg className="countdown-svg">
         <circle
           id="circle"
-          r="50"
+          r="35"
           cx="54"
           cy="54"
           style={{ animation: animationStyle }}
