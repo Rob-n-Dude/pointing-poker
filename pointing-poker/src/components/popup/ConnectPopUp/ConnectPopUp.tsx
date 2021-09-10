@@ -1,6 +1,4 @@
 import React, { FC } from 'react';
-import ButtonStyles from '../../../shared/ButtonStyles';
-import Button from '../../button/Button';
 import Form from './form/Form';
 import Switcher from '../../switcher/Switcher';
 import './ConnectPopUp.scss';
@@ -17,10 +15,6 @@ const ConnectPopUp: FC = () => {
           <Switcher id="observer" action={() => {}} />
         </div>
         <Form />
-        <div className="connectButtons">
-          <Button textContent="Confirm" action={() => {}} styles={ButtonStyles.default} />
-          <Button textContent="Cancel" action={() => {}} styles={ButtonStyles.white} />
-        </div>
       </div>
     </>
   );

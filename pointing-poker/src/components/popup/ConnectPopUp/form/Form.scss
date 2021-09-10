@@ -16,6 +16,12 @@
     .jobPosition,
     .image-desc {
       font-family: Ruda;
+      margin-bottom: 10px;
+    }
+
+    .error {
+      color: $red;
+      font-size: 16px;
     }
 
     .input.input_with_border.longer {
