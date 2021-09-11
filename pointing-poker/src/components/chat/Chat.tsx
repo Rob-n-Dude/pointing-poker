@@ -1,5 +1,8 @@
 import React, { FC } from 'react';
 import './Chat.scss';
+import Message from './Message/Message';
+
+//  <div className="type-message"> appears when a person writes messages
 
 const Chat: FC = () => {
   return (
@@ -7,13 +10,10 @@ const Chat: FC = () => {
       <div className="chat-head">Chat Room</div>
       <div className="chat-body">
         <div className="chat">
-          <div className="message right">
-            <div className="box sb1">I&apos;m speech bubble</div>
-            <div className="userPic-chat right">{/* {initials} */}RG</div>
-          </div>
+          <Message user="JS" message="Bla bla" />
           <div className="message left">
-            <div className="userPic-chat left">{/* {initials} */}RG</div>
-            <div className="box sb2">
+            <div className="userPic-chat left">RG</div>
+            <div className="box sb2 left">
               I&apos;m speech bubble I&apos;m speech bubble I&apos;m speech bubble I&apos;m speech bubble I&apos;m
               speech bubble I&apos;m speech bubble
             </div>
