@@ -1,14 +1,15 @@
-import React, { useCallback, useEffect, useState, FC } from 'react';
+import React, { useMemo, useCallback, useEffect, useState, FC } from 'react';
 import './timer.scss';
 
 type TTimer = {
   secondsTotal: number;
+  isStarted: boolean;
 };
 
-const Timer: FC<TTimer> = ({ secondsTotal }) => {
+const Timer: FC<TTimer> = ({ secondsTotal, isStarted }) => {
   const [timeLeft, setTimeLeft] = useState<number>(secondsTotal);
   const [parsedTime, setParsedTime] = useState<string[]>(['00', '00']);
-  const animationStyle = `countdown ${secondsTotal}s linear forwards`;
+  const animationStyle = useMemo(() => `countdown ${secondsTotal}s linear forwards`, [secondsTotal]);
 
   const parseSeconds = useCallback(() => {
     const minutes = Math.floor(timeLeft / 60);
@@ -30,13 +31,15 @@ const Timer: FC<TTimer> = ({ secondsTotal }) => {
   }, [timeLeft]);
 
   useEffect(() => {
-    if (timeLeft >= 0) {
-      parseSeconds();
-      setTimeout(() => {
-        setTimeLeft(timeLeft - 1);
-      }, 1000);
+    if (isStarted) {
+      if (timeLeft >= 0) {
+        parseSeconds();
+        setTimeout(() => {
+          setTimeLeft(timeLeft - 1);
+        }, 1000);
+      }
     }
-  }, [parseSeconds, timeLeft]);
+  }, [parseSeconds, timeLeft, isStarted]);
 
   return (
     <div id="countdown">
@@ -47,7 +50,7 @@ const Timer: FC<TTimer> = ({ secondsTotal }) => {
           r="35"
           cx="54"
           cy="54"
-          style={{ animation: animationStyle }}
+          style={isStarted ? { animation: animationStyle } : undefined}
           className="countdown-svg-circle"
         />
       </svg>

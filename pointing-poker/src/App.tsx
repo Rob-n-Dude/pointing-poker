@@ -8,7 +8,7 @@ const App: React.FC = () => {
   return (
     <>
       <Header />
-      <Timer secondsTotal={1550} />
+      <Timer secondsTotal={500} isStarted />
       <Footer />
     </>
   );

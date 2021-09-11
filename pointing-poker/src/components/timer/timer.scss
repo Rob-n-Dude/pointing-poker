@@ -26,7 +26,7 @@
 
   &-circle {
     stroke-dasharray: 315px;
-    stroke-dashoffset: 0px;
+    stroke-dashoffset: 90px;
     stroke-linecap: round;
     stroke-width: 4px;
     stroke: $dark-blue;
@@ -36,7 +36,7 @@
 
 @keyframes countdown {
   from {
-    stroke-dashoffset: 0px;
+    stroke-dashoffset: 90px;
     stroke: $dark-blue;
   }
   to {
