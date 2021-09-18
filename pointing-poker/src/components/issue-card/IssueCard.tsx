@@ -3,11 +3,13 @@ import ChangeButton from '../iconButtons/ChangeButton';
 import DeleteButton from '../iconButtons/DeleteButton';
 import './issueCard.scss';
 
+export interface IIssueInfo {
+  name: string;
+  priority: string;
+}
+
 export interface IIssueCard {
-  info: {
-    name: string;
-    priority: string;
-  };
+  info: IIssueInfo;
 }
 
 const IssueCard: React.FC<IIssueCard> = (info: IIssueCard): JSX.Element => {

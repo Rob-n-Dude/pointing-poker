@@ -2,7 +2,13 @@ import React from 'react';
 import { TUserInfo } from '../../shared/types';
 import './memberCard.scss';
 
-const LobbyMasterCard: React.FC<TUserInfo> = ({ name, lastName, jobPosition, avatar }): JSX.Element => {
+type TLobbyMasterCard = {
+  info: TUserInfo;
+};
+
+const LobbyMasterCard: React.FC<TLobbyMasterCard> = ({ info }): JSX.Element => {
+  const { name, lastName, avatar, jobPosition } = info;
+
   const nameParser = (): string => {
     return `${name} ${lastName}`;
   };

@@ -10,13 +10,7 @@ const LobbyHead: React.FC<TLobby> = ({ user }): JSX.Element => {
     <div className="lobby-head">
       <div className="lobby-head-master_card">
         <p className="lobby-head-master_card_text"> Master: </p>
-        <LobbyMasterCard
-          name={user.name}
-          lastName={user.lastName}
-          jobPosition={user.jobPosition}
-          avatar={user.avatar}
-          role={user.role}
-        />
+        <LobbyMasterCard info={user} />
       </div>
       {user.role === UserRole.dealer ? (
         <>
