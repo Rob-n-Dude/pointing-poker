@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import { TUserInfo } from '../../shared/types';
 import MemberCard from '../member-card/MemberCard';
 
-interface IScoreFieldItem {
+type IScoreFieldItem = {
   user: TUserInfo;
-}
+};
 const ScoreFieldItem: FC<IScoreFieldItem> = ({ user }) => {
   const { name, lastName, avatar, jobPosition, vote } = user || ({} as TUserInfo);
   return (
