@@ -19,3 +19,7 @@ $red: #ff0000;
 @mixin box-shadow-main-hover {
   box-shadow: 4px 7px 4px rgb(116 151 232 / 25%);
 }
+
+@mixin active-element {
+  background-color: #dffdff !important;
+}

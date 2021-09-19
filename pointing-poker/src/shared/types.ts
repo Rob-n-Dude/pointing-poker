@@ -15,6 +15,7 @@ export type TUserInfo = {
   jobPosition?: string;
   avatar: string; // | тип картинки которая вернется с серва
   role: UserRole;
+  vote?: string;
 };
 
 export enum UserRole {
