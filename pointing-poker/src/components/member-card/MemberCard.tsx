@@ -3,7 +3,7 @@ import { TUserInfo } from '../../shared/types';
 import DeleteButton from '../iconButtons/DeleteButton';
 import './memberCard.scss';
 
-const MemberCard: React.FC<TUserInfo> = ({ name, lastName, jobPosition, avatar }): JSX.Element => {
+const MemberCard: React.FC<Partial<TUserInfo>> = ({ name, lastName, jobPosition, avatar }): JSX.Element => {
   const nameParser = (): string => {
     return `${name} ${lastName}`;
   };
