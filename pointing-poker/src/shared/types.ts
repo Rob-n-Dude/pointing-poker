@@ -13,9 +13,14 @@ export type TUserInfo = {
   name: string;
   lastName?: string;
   jobPosition?: string;
-  avatar: string; // | тип картинки которая вернется с серва
+  avatar: TAvatar;
   role: UserRole;
   vote?: string;
+};
+
+export type TAvatar = {
+  initial?: string;
+  image?: string;
 };
 
 export enum UserRole {
