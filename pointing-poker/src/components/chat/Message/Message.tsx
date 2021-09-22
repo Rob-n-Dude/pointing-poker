@@ -1,28 +1,26 @@
 import React, { FC, useState } from 'react';
 import './Message.scss';
-
-/* enum MessageStyles {
-  own = 'right',
-  other = 'left',
-} */
+import MessageStyles from './MessageStyles';
 
 type TMessage = {
   user: string;
   message: string;
-  // own: true; or styles: MessageStyles;
+  styles: MessageStyles;
 };
 
-const Message: FC<TMessage> = ({ user, message }) => {
-  const [messageUser] = useState<TMessage>({ user, message });
+const Message: FC<TMessage> = ({ user, message, styles }) => {
+  const [messageUser] = useState<TMessage>({ user, message, styles });
+
+  // TODO: need to make user verification via redax for message styles
 
   /*   useEffect(() => {
     setMessage(message);
   }, [message]); */
 
   return (
-    <div className="message right">
-      <div className="box sb1 right">{message}</div>
-      <div className="userPic-chat right">{messageUser.user}</div>
+    <div className={`message${styles}`}>
+      <div className={`box sb1${styles}`}>{message}</div>
+      <div className={`userPic-chat${styles}`}>{messageUser.user}</div>
     </div>
   );
 };
