@@ -1,0 +1,60 @@
+@import '../../../shared/Variables.scss';
+
+.results-wrapper {
+  padding: 1em;
+
+  .result-title {
+    font-family: Ruda;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 0.5em 0;
+  }
+
+  .results-container {
+    margin: 0 auto;
+    width: 50%;
+    background: rgba(221, 255, 254, 0.7);
+    border-radius: 10px;
+    @include box-shadow-main;
+
+    .results-container-item,
+    .results-items {
+      padding: 0.5em 0;
+      display: flex;
+      justify-content: space-around;
+
+      .result-head,
+      .result-item-avg {
+        width: 30%;
+        height: 2.5em;
+        background: $white;
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        @include box-shadow-main;
+
+        font-family: Ruda;
+        font-size: 1em;
+      }
+
+      .result-item-name {
+        width: 30%;
+        height: 2.5em;
+        background: $white;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        @include box-shadow-main;
+
+        font-family: Ruda;
+        font-size: 1em;
+
+        .priority {
+          font-size: 0.5em;
+        }
+      }
+    }
+  }
+}
