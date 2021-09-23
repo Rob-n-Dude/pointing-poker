@@ -1,8 +1,6 @@
 import { createReducer, Action } from 'typesafe-actions';
 import { TSideBar } from '../types';
 
-const sideBarInitial = {} as TSideBar;
+export const sideBarInitial = {} as TSideBar;
 
-const sideBarReducer = createReducer<TSideBar, Action>(sideBarInitial);
-
-export default sideBarReducer;
+export const sideBarReducer = createReducer<TSideBar, Action>(sideBarInitial);

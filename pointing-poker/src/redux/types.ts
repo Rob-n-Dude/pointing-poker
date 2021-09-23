@@ -8,4 +8,5 @@ export type TStore = {
   game: TGame;
   sideBar: TSideBar;
   settings: TLobbySettings;
+  activePage: TActivePage;
 };

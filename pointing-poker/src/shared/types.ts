@@ -32,3 +32,29 @@ export enum UserRole {
 export type TLobby = {
   user: TUserInfo;
 };
+
+export enum ActivePages {
+  greeting,
+  lobby,
+  stats,
+}
+
+export type TUserMessage = {
+  sender: TUserInfo;
+  text: string;
+};
+
+export type TUserVote = {
+  user: TUserInfo;
+  vote: string;
+};
+
+export type TUserKickUser = {
+  initiator: TUserInfo;
+  victim: TUserInfo;
+};
+
+export type TUserDecideToKick = {
+  user: TUserInfo;
+  decision: boolean;
+};
