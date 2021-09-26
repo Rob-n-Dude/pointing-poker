@@ -1,16 +1,14 @@
-import { TUserInfo } from '../../shared/types';
+import { TUserInfo, TUserVote } from '../../shared/types';
 
 export type TGame = {
   players: TUserInfo[];
   master: TUserInfo;
   rounds: TRound[];
+  currentRound: TRound;
 };
 
 export type TRound = {
   issueName: string;
-  votes: TVote[];
-};
-
-export type TVote = {
-  vote: string;
+  average: number;
+  votes: TUserVote[];
 };

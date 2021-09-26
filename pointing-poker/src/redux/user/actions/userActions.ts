@@ -1,7 +1,7 @@
 import { Action } from 'typesafe-actions';
 import { ThunkAction } from 'redux-thunk';
 import { createAction } from 'typesafe-actions/dist/deprecated/create-action';
-import userApi from '../../../services/Api';
+import { userApi } from '../../../services/Api';
 import { TUserInfo } from '../../../shared/types';
 import { TStore } from '../../types';
 
