@@ -1,5 +1,7 @@
 import { IIssueInfo } from '../../components/issue-card/IssueCard';
 
+export type TAddIssue = IIssueInfo | IIssueInfo[];
+
 export type TLobbySettings = {
   timer: TTimerSettings;
   masterAsPlayer: boolean;

@@ -1,3 +1,4 @@
+import { IIssueInfo } from '../../components/issue-card/IssueCard';
 import { TUserInfo, TUserVote } from '../../shared/types';
 
 export type TGame = {
@@ -8,7 +9,7 @@ export type TGame = {
 };
 
 export type TRound = {
-  issueName: string;
+  issue: IIssueInfo;
   average: number;
   votes: TUserVote[];
 };

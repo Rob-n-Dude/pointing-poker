@@ -15,7 +15,7 @@ import { TLobbySettings } from '../redux/settings/types';
 import { TRound } from '../redux/game/types';
 import { IIssueInfo } from '../components/issue-card/IssueCard';
 
-const baseUrl = 'https//heroku.com/our-app/';
+const baseUrl = 'https://pointing-poker-backend.herokuapp.com/';
 
 const socket = io(baseUrl);
 
