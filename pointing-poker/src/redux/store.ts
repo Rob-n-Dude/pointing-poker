@@ -20,3 +20,5 @@ const middleware = [thunk];
 const rootReducer = combineReducers({ user: userReducer });
 
 const store = createStore(rootReducer, initialState, applyMiddleware(...middleware));
+
+export default store;
