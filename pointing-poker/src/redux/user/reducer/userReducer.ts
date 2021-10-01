@@ -1,6 +1,6 @@
 import { createReducer, Action } from 'typesafe-actions';
 import { TUserInfo } from '../../../shared/types';
-import { registerUser } from '../actions/userActions';
+import registerUser from '../actions/userActions';
 
 export const userInitial = {} as TUserInfo;
 
