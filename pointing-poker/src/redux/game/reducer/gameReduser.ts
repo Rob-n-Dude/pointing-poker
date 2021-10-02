@@ -35,7 +35,7 @@ export const gameReducer = createReducer<TGame, Action>(gameInitial)
       ...state,
       currentRound: action.payload,
     };
-  })
+  }) // replace reducer updateVotes
   .handleAction(updateVotes, (state, action) => {
     return {
       ...state,
