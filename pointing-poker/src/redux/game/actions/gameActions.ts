@@ -14,6 +14,7 @@ export const setRounds = createAction('game/set-rounds', (action) => {
   return (rounds: TRound[]) => action(rounds);
 });
 
+// replace updateVotes
 export const updateVotes = createAction('game/update-votes', (action) => {
   return (roundVotes: TUserVote[]) => action(roundVotes);
 });
