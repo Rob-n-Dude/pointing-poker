@@ -10,7 +10,7 @@ import {
   TSettingsCallBack,
   TUpdateIssueCallBack,
 } from './ApiTypes';
-import { TUserMessage, TUserVote, TUserDecideToKick, TUserKickUser, TUserInfo } from '../shared/types';
+import { TUserMessage, TUserVote, TUserDecideToKick, TUserInfo } from '../shared/types';
 import { TLobbySettings } from '../redux/settings/types';
 import { TRound } from '../redux/game/types';
 import { IIssueInfo } from '../components/issue-card/IssueCard';
@@ -33,8 +33,8 @@ export const userApi = {
     // когда приходят сообщения
   },
 
-  sendInviteToKickPlayer: ({ initiator, victim }: TUserKickUser): void => {
-    socket.emit('user-want-to-kick-user', [initiator, victim]);
+  sendInviteToKickPlayer: (victim: TUserInfo): void => {
+    socket.emit('user-want-to-kick-user', victim);
   },
 
   sendKickDecision: (decision: TUserDecideToKick): void => {
@@ -95,4 +95,6 @@ export const settingsApi = {
 
   issueUpdated: (callBack: TUpdateIssueCallBack) =>
     socket.on('issues-updated', (updatedIssues) => callBack(updatedIssues)),
+
+  // Сделать апдейт одной ишью
 };

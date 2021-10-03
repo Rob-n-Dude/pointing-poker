@@ -1,9 +1,9 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import { pageInitial } from './activePage/reducer/activePageReducer';
-import { gameInitial } from './game/reducer/gameReduser';
-import { settingsInitial } from './settings/reducer/settingsReducer';
-import { sideBarInitial } from './sideBar/reducer/sideBarReducer';
+import { activePageReducer, pageInitial } from './activePage/reducer/activePageReducer';
+import { gameInitial, gameReducer } from './game/reducer/gameReduser';
+import { settingsInitial, settingsReducer } from './settings/reducer/settingsReducer';
+import { sideBarInitial, sideBarReducer } from './sideBar/reducer/sideBarReducer';
 import { TStore } from './types';
 import { userInitial, userReducer } from './user/reducer/userReducer';
 
@@ -17,8 +17,13 @@ const initialState: TStore = {
 
 const middleware = [thunk];
 
-// add reducer to combineReducers
-const rootReducer = combineReducers({ user: userReducer });
+const rootReducer = combineReducers({
+  user: userReducer,
+  game: gameReducer,
+  sideBar: sideBarReducer,
+  settings: settingsReducer,
+  activePage: activePageReducer,
+});
 
 const store = createStore(rootReducer, initialState, applyMiddleware(...middleware));
 
