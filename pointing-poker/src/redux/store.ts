@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { activePageReducer, pageInitial } from './activePage/reducer/activePageReducer';
-import { gameInitial, gameReducer } from './game/reducer/gameReduser';
+import { gameInitial, gameReducer } from './game/reducer/gameReducer';
 import { settingsInitial, settingsReducer } from './settings/reducer/settingsReducer';
 import { sideBarInitial, sideBarReducer } from './sideBar/reducer/sideBarReducer';
 import { TStore } from './types';

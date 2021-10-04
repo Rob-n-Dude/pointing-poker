@@ -93,8 +93,8 @@ export const settingsApi = {
 
   deleteIssue: (issue: IIssueInfo) => socket.emit('delete-issue', issue),
 
-  issueUpdated: (callBack: TUpdateIssueCallBack) =>
-    socket.on('issues-updated', (updatedIssues) => callBack(updatedIssues)),
+  updateOneIssue: (issue: IIssueInfo) => socket.emit('update-issue', issue),
 
-  // Сделать апдейт одной ишью
+  issuesUpdated: (callBack: TUpdateIssueCallBack) =>
+    socket.on('issues-updated', (updatedIssues) => callBack(updatedIssues)),
 };
