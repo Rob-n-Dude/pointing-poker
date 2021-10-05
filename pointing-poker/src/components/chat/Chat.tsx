@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import './Chat.scss';
 import Message from './Message/Message';
+import MessageStyles from './Message/MessageStyles';
 
 //  <div className="type-message"> appears when a person writes messages
 
@@ -10,7 +11,12 @@ const Chat: FC = () => {
       <div className="chat-head">Chat Room</div>
       <div className="chat-body">
         <div className="chat">
-          <Message user="JS" message="Bla bla" />
+          {/*           {Own - message ? (
+            <Message user="JS" message="Bla bla" styles={MessageStyles.own} />
+          ) : (
+            <Message user="JS" message="Bla bla" styles={MessageStyles.other} />
+          )} */}
+          <Message user="JS" message="Bla bla" styles={MessageStyles.own} />
           <div className="message left">
             <div className="userPic-chat left">RG</div>
             <div className="box sb2 left">
