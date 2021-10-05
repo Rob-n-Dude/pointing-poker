@@ -1,4 +1,4 @@
-import { createAction } from 'typesafe-actions/dist/deprecated/create-action';
+import { createAction } from 'typesafe-actions';
 import { IIssueInfo } from '../../../components/issue-card/IssueCard';
 import { TAddIssue, TLobbySettings } from '../types';
 

@@ -1,4 +1,4 @@
-import { createAction } from 'typesafe-actions/dist/deprecated/create-action';
+import { createAction } from 'typesafe-actions';
 import { TRound } from '../types';
 import { TUserVote, TUserInfo } from '../../../shared/types';
 

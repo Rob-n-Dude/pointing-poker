@@ -1,4 +1,4 @@
-import { createAction } from 'typesafe-actions/dist/deprecated/create-action';
+import { createAction } from 'typesafe-actions';
 import { ActivePages } from '../../../shared/types';
 
 const changePageTo = createAction('activePage/changePage', (action) => {

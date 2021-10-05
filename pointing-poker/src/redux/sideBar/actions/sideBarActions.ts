@@ -1,4 +1,4 @@
-import { createAction } from 'typesafe-actions/dist/deprecated/create-action';
+import { createAction } from 'typesafe-actions';
 
 export const setIsSideBarNeeded = createAction('sideBar/setIsNeeded', (action) => {
   return (value: boolean) => action(value);
