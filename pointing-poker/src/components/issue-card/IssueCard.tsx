@@ -22,6 +22,7 @@ const IssueCard: React.FC<IIssueCard> = (info: IIssueCard): JSX.Element => {
         <p className="issue_card_info_name">{name}</p>
         <p className="issue_card_info_priority">{priority}</p>
       </div>
+      {/* кнопки управления нужно будет иногда убирать, для страницы статистики, нужно сделать через редакс */}
       <div className="issue_card_controls">
         <ChangeButton action={() => {}} />
         <DeleteButton action={() => {}} />

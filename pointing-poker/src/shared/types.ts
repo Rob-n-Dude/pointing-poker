@@ -13,9 +13,14 @@ export type TUserInfo = {
   name: string;
   lastName?: string;
   jobPosition?: string;
-  avatar: string; // | тип картинки которая вернется с серва
+  avatar: TAvatar;
   role: UserRole;
   vote?: string;
+};
+
+export type TAvatar = {
+  initial?: string;
+  image?: string;
 };
 
 export enum UserRole {
@@ -26,4 +31,30 @@ export enum UserRole {
 
 export type TLobby = {
   user: TUserInfo;
+};
+
+export enum ActivePages {
+  greeting,
+  lobby,
+  stats,
+}
+
+export type TUserMessage = {
+  sender: TUserInfo;
+  text: string;
+};
+
+export type TUserVote = {
+  user: TUserInfo;
+  vote: string;
+};
+
+export type TUserKickUser = {
+  initiator: TUserInfo;
+  victim: TUserInfo;
+};
+
+export type TUserDecideToKick = {
+  user: TUserInfo;
+  decision: boolean;
 };
