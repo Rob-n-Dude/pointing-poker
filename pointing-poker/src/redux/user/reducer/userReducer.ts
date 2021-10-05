@@ -1,4 +1,4 @@
-import { createReducer, Action } from 'typesafe-actions';
+import { Action, createReducer } from 'typesafe-actions';
 import { TUserInfo } from '../../../shared/types';
 import registerUser from '../actions/userActions';
 

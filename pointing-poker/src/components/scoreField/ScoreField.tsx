@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { TUserInfo, UserRole } from '../../shared/types';
+import { TAvatar, TUserInfo, UserRole } from '../../shared/types';
 import './scoreField.scss';
 import ScoreFieldItem from './ScoreFieldItem';
 
@@ -7,7 +7,7 @@ const us: TUserInfo = {
   name: 'Jon',
   lastName: 'Sina',
   jobPosition: 'Jun',
-  avatar: '1',
+  avatar: {} as TAvatar,
   role: UserRole.dealer,
 };
 

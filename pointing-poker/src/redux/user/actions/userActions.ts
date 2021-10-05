@@ -1,8 +1,6 @@
-import { createAction } from 'typesafe-actions/dist/deprecated/create-action';
+import { action } from 'typesafe-actions';
 import { TUserInfo } from '../../../shared/types';
 
-const registerUser = createAction('user/registerUser', (action) => {
-  return (user: TUserInfo) => action(user);
-});
+const registerUser = (user: TUserInfo) => action('user/registerUser', user);
 
 export default registerUser;
