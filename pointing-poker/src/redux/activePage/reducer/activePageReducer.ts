@@ -1,4 +1,5 @@
 import { createReducer, Action } from 'typesafe-actions';
+
 import changePageTo from '../actions/activePageActions';
 import { TActivePage } from '../types';
 

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Greeting.scss';
 import Button from '../../button/Button';
 import ButtonStyles from '../../../shared/ButtonStyles';
 
 const Greeting: React.FC = (): JSX.Element => {
+  useEffect(() => {
+    setTimeout(() => {
+      window.alert('Sorry mi vsio prosraly');
+    }, 400);
+  }, []);
   return (
     <main className="main">
       <div className="container main-content">
@@ -23,7 +28,9 @@ const Greeting: React.FC = (): JSX.Element => {
           <h2 className="start-title">Start your planning:</h2>
           <div className="start">
             <p className="create">Create session:</p>
-            <Button textContent="Start new game" action={() => {}} styles={ButtonStyles.default} />
+            <a href="#/lobby">
+              <Button textContent="Start new game" action={() => {}} styles={ButtonStyles.default} />
+            </a>
           </div>
           <p className="start-title or">OR:</p>
           <p className="connect">
@@ -31,7 +38,9 @@ const Greeting: React.FC = (): JSX.Element => {
           </p>
           <div className="connect-input">
             <input className="input" type="text" placeholder="URL" />
-            <Button textContent="Connect" action={() => {}} styles={ButtonStyles.default} />
+            <a href="#/game">
+              <Button textContent="Connect" action={() => {}} styles={ButtonStyles.default} />
+            </a>
           </div>
         </div>
       </div>

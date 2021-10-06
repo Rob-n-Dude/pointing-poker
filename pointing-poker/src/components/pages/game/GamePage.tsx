@@ -4,8 +4,13 @@ import GamePageRoundView from './GamePageRoundView';
 import GamePageControls from './GamePageControls';
 import GamePageHead from './GamePageHead';
 import SideBar from '../../sideBar/SideBar';
+import Chat from '../../chat/Chat';
 
-const GamePage: FC = () => {
+interface IGamePage {
+  isChat: boolean;
+}
+
+const GamePage: FC<IGamePage> = ({ isChat }) => {
   // из редакса необходима только тайтл
 
   return (
@@ -18,6 +23,7 @@ const GamePage: FC = () => {
           <GamePageControls />
         </div>
       </div>
+      {isChat && <Chat />}
       <SideBar />
     </div>
   );

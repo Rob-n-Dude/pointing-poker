@@ -15,7 +15,7 @@ const LobbyMasterCard: React.FC<TLobbyMasterCard> = ({ info }): JSX.Element => {
 
   return (
     <div className="member-card">
-      <img className="member-card_img" src={avatar.image || ''} alt={avatar.image! || ''} />
+      <img className="member-card_img" src={avatar?.image || ''} alt={name} />
       <div className="member-card-personal">
         <p className="member-card-personal_name">{nameParser()}</p>
         <p className="member-card-personal_position">{jobPosition}</p>

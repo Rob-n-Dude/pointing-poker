@@ -5,20 +5,24 @@ import LobbyMembers from './lobby-members/LobbyMembers';
 import LobbySettings from './lobbySettings/LobbySettings';
 import './lobby.scss';
 import { TLobby, UserRole } from '../../../shared/types';
+import Chat from '../../chat/Chat';
 
-const Lobby: React.FC<TLobby> = ({ user }): JSX.Element => {
+const Lobby: React.FC<TLobby> = ({ user, isChat }): JSX.Element => {
   return (
     <>
-      <div className="container">
-        <p className="lobby-name">Some lobby name</p>
-        <LobbyHead user={user} />
-        <LobbyMembers />
-        {user.role === UserRole.dealer ? (
-          <>
-            <LobbyIssues />
-            <LobbySettings />
-          </>
-        ) : null}
+      <div className="content">
+        <div className="container">
+          <p className="lobby-name">Some lobby name</p>
+          <LobbyHead user={user} isChat={isChat} />
+          <LobbyMembers />
+          {user.role === UserRole.dealer ? (
+            <>
+              <LobbyIssues />
+              <LobbySettings />
+            </>
+          ) : null}
+        </div>
+        {isChat && <Chat />}
       </div>
     </>
   );
