@@ -1,7 +1,10 @@
-import { action } from 'typesafe-actions';
+import { createAction } from 'typesafe-actions';
 
-export const setIsSideBarNeeded = (value: boolean) => action('sideBar/setIsNeeded', value);
+export const setIsSideBarNeeded = createAction('sideBar/setIsNeeded', (value: boolean) => value)<boolean>();
 
-export const setChatVisability = (value: boolean) => action('sideBar/set-chat-visability', value);
+export const setChatVisability = createAction('sideBar/set-chat-visability', (value: boolean) => value)<boolean>();
 
-export const setScoreVisability = (value: boolean) => action('sideBar/set-setScoreVisability-visability', value);
+export const setScoreVisability = createAction(
+  'sideBar/set-setScoreVisability-visability',
+  (value: boolean) => value,
+)<boolean>();

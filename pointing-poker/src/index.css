@@ -216,3 +216,10 @@ body {
   display: flex;
   flex-direction: row;
 }
+
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}

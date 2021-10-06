@@ -1,6 +1,6 @@
-import { action } from 'typesafe-actions';
+import { createAction } from 'typesafe-actions';
 import { TUserInfo } from '../../../shared/types';
 
-const registerUser = (user: TUserInfo) => action('user/registerUser', user);
+const registerUser = createAction('user/registerUser', (user: TUserInfo) => user)<TUserInfo>();
 
 export default registerUser;

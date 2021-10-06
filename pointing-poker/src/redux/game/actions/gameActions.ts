@@ -1,15 +1,15 @@
-import { action } from 'typesafe-actions';
+import { createAction } from 'typesafe-actions';
 import { TRound } from '../types';
 import { TUserVote, TUserInfo } from '../../../shared/types';
 
-export const setAllPlayers = (players: TUserInfo[]) => action('game/setPlayers', players);
+export const setAllPlayers = createAction('game/setPlayers', (players: TUserInfo[]) => players)<TUserInfo[]>();
 
-export const setMaster = (master: TUserInfo) => action('game/set-master', master);
+export const setMaster = createAction('game/set-master', (master: TUserInfo) => master)<TUserInfo>();
 
-export const setRounds = (rounds: TRound[]) => action('game/set-rounds', rounds);
+export const setRounds = createAction('game/set-rounds', (rounds: TRound[]) => rounds)<TRound[]>();
 
-export const updateVotes = (roundVotes: TUserVote[]) => action('game/update-votes', roundVotes);
+export const updateVotes = createAction('game/update-votes', (roundVotes: TUserVote[]) => roundVotes)<TUserVote[]>();
 
-export const setRoundAverage = (average: number) => action('game/set-round-average', average);
+export const setRoundAverage = createAction('game/set-round-average', (average: number) => average)<number>();
 
-export const setCurrentRound = (currentRound: TRound) => action('game/set-current-round', currentRound);
+export const setCurrentRound = createAction('game/set-current-round', (currentRound: TRound) => currentRound)<TRound>();
