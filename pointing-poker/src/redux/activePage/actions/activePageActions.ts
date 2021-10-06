@@ -1,6 +1,6 @@
-import { action } from 'typesafe-actions';
+import { createAction } from 'typesafe-actions';
 import { ActivePages } from '../../../shared/types';
 
-const changePageTo = (page: ActivePages) => action('activePage/changePage', page);
+const changePageTo = createAction('activepage', (page: ActivePages) => page)<ActivePages>();
 
 export default changePageTo;

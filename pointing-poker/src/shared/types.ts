@@ -31,6 +31,7 @@ export enum UserRole {
 
 export type TLobby = {
   user: TUserInfo;
+  isChat: boolean;
 };
 
 export enum ActivePages {

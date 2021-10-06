@@ -31,7 +31,9 @@ const GamePageHead: FC = () => {
         <>
           {/* if you are not a dealer */}
           <Timer secondsTotal={gamePageInfo.gameSettings.timer} isStarted={gamePageInfo.gameSettings.isRoundStarted} />
-          <Button action={() => {}} styles={ButtonStyles.white} textContent="Exit game" />
+          <a href="/">
+            <Button action={() => {}} styles={ButtonStyles.white} textContent="Exit game" />
+          </a>
         </>
       )}
     </div>

@@ -39,7 +39,9 @@ const LobbyHead: React.FC<TLobby> = ({ user }): JSX.Element => {
           {' '}
           <div className="lobby-head-controls">
             <div />
-            <Button textContent="Exit" action={() => {}} styles={ButtonStyles.white} />
+            <a href="/">
+              <Button textContent="Exit" action={() => {}} styles={ButtonStyles.white} />
+            </a>
           </div>
         </>
       )}

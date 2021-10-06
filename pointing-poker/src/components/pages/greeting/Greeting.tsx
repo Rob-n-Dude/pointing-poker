@@ -23,15 +23,19 @@ const Greeting: React.FC = (): JSX.Element => {
           <h2 className="start-title">Start your planning:</h2>
           <div className="start">
             <p className="create">Create session:</p>
-            <Button textContent="Start new game" action={() => {}} styles={ButtonStyles.default} />
+            <a href="/lobby">
+              <Button textContent="Start new game" action={() => {}} styles={ButtonStyles.default} />
+            </a>
           </div>
           <p className="start-title or">OR:</p>
           <p className="connect">
             Connect to lobby by <span className="url">URL:</span>
           </p>
           <div className="connect-input">
-            <input className="input" type="text" placeholder="URL" />
-            <Button textContent="Connect" action={() => {}} styles={ButtonStyles.default} />
+            <a href="/game">
+              <input className="input" type="text" placeholder="URL" />
+              <Button textContent="Connect" action={() => {}} styles={ButtonStyles.default} />
+            </a>
           </div>
         </div>
       </div>

@@ -1,9 +1,12 @@
-import { action } from 'typesafe-actions';
+import { createAction } from 'typesafe-actions';
 import { IIssueInfo } from '../../../components/issue-card/IssueCard';
 import { TAddIssue, TLobbySettings } from '../types';
 
-export const setLobbySettings = (settings: TLobbySettings) => action('settings/set-settings', settings);
+export const setLobbySettings = createAction(
+  'settings/set-settings',
+  (settings: TLobbySettings) => settings,
+)<TLobbySettings>();
 
-export const removeIssue = (issue: IIssueInfo) => action('settings/remove-issue', issue);
+export const removeIssue = createAction('settings/remove-issue', (issue: IIssueInfo) => issue)<IIssueInfo>();
 
-export const addIssue = (issue: TAddIssue) => action('settings/add-issue', issue);
+export const addIssue = createAction('settings/add-issue', (issue: TAddIssue) => issue)<TAddIssue>();
