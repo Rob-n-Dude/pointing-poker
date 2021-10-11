@@ -1,0 +1,57 @@
+.lobby {
+  &-name {
+    margin: 0 auto;
+    width: fit-content;
+  }
+  &-head {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+    &-master_card {
+      display: inherit;
+      align-items: center;
+      flex-direction: row;
+
+      &_text {
+        margin-right: 10px;
+      }
+    }
+
+    &-link {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+
+      &_input-wrapper {
+        display: inherit;
+        flex-direction: row;
+      }
+    }
+
+    &-controls {
+      margin-top: 20px;
+      display: inherit;
+      justify-content: space-between;
+    }
+  }
+
+  &-members {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &_title {
+      width: fit-content;
+      margin: 0 auto 20px;
+    }
+
+    &_list {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}

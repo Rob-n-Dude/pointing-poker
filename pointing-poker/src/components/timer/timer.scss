@@ -1,0 +1,45 @@
+@import '../../shared/Variables.scss';
+
+#countdown {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+#countdown-number {
+  color: #333;
+  display: inline-block;
+  line-height: 40px;
+  z-index: 2;
+}
+
+.countdown-svg {
+  position: absolute;
+  top: -35px;
+  right: -24px;
+  width: 110px;
+  height: 110px;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+
+  &-circle {
+    stroke-dasharray: 315px;
+    stroke-dashoffset: 90px;
+    stroke-linecap: round;
+    stroke-width: 4px;
+    stroke: $dark-blue;
+    fill: none;
+  }
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 90px;
+    stroke: $dark-blue;
+  }
+  to {
+    stroke-dashoffset: 315px;
+    stroke: red;
+  }
+}

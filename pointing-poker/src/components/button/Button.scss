@@ -1,0 +1,36 @@
+@import '../../shared/Variables.scss';
+
+.default,
+.white {
+  width: 241px;
+  height: 47px;
+  background-color: $dark-blue;
+  border: 1px solid #496a81;
+  border-radius: 3px;
+
+  font-family: Ruda;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: $white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  border: none;
+  transition: all 0.1s linear;
+}
+
+.default:hover {
+  background-color: #05bad0;
+}
+
+.white {
+  background-color: $white;
+  color: $dark-blue;
+  border: 1px solid #496a81;
+}
+
+.white:hover {
+  background-color: $dark-blue;
+  color: $white;
+}

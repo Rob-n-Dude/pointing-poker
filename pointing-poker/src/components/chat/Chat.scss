@@ -1,0 +1,150 @@
+@import '../../shared/Variables.scss';
+
+.chat-wrap {
+  margin: 0 auto;
+  width: 500px;
+  height: calc(100vh - 140px);
+  background-color: rgba(221, 255, 254, 0.7);
+  position: relative;
+
+  .chat-head {
+    margin: 0 auto;
+    width: 480px;
+    @include box-shadow-main;
+    height: 50px;
+    border-radius: 10px;
+    font-family: Ruda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $dark-blue;
+    margin-bottom: 10px;
+    @include text-shadow-title;
+  }
+
+  .chat-body {
+    width: 480px;
+    margin: 0 auto;
+    height: calc(100vh - 280px);
+    @include box-shadow-main;
+    background-color: $white;
+    border-radius: 10px;
+
+    .chat {
+      width: 470px;
+      height: 92%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+
+  .type-message {
+    position: absolute;
+    top: 85%;
+    left: 20px;
+
+    .bubble {
+      background-color: rgba(221, 255, 254, 0.7);
+      padding: 6px 20px 9px 20px;
+      @include box-shadow-main;
+    }
+  }
+
+  .ellipsis {
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    background: lighten($dark-blue, 25%);
+    border-radius: 50%;
+    animation: jump 1.3s linear infinite;
+    margin-right: 2px;
+  }
+
+  .one {
+    animation-delay: 0.6s;
+  }
+  .two {
+    animation-delay: 0.5s;
+  }
+  .three {
+    animation-delay: 0.8s;
+  }
+
+  .bubble {
+    position: relative;
+    display: inline-block;
+    font-size: 0.7em;
+    border-radius: 20px;
+  }
+
+  .bottom-bar {
+    margin: 0 10px;
+    position: absolute;
+    width: 480px;
+    height: 55px;
+    bottom: 10px;
+    background: $white;
+    border-radius: 0 0 10px 10px;
+    @include box-shadow-main;
+
+    .chat-input {
+      padding: 3px;
+      width: 74%;
+      left: 5%;
+      position: absolute;
+      border: 0;
+      top: 10px;
+      background: $white;
+      color: $turquoise;
+    }
+
+    .chat-input::placeholder {
+      color: $turquoise;
+    }
+
+    .chat-input:focus {
+      color: $turquoise;
+      outline: 0;
+    }
+
+    .chat-button {
+      position: absolute;
+      border: 0;
+      font-size: 1em;
+      color: $turquoise;
+      top: 13px;
+      opacity: 0.8;
+      right: 17px;
+      cursor: pointer;
+      outline: 0;
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+        color: $turquoise;
+      }
+    }
+
+    .post {
+      fill: $turquoise;
+      background-color: transparent;
+    }
+  }
+}
+
+@keyframes jump {
+  30% {
+    transform: translateY(-2px);
+  }
+  60% {
+    transform: translateY(0px);
+  }
+  80% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0.5;
+  }
+}

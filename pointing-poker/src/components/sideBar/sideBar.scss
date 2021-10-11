@@ -1,0 +1,7 @@
+@import '../../shared/Variables.scss';
+
+.sideBar {
+  width: 30%;
+  @include box-shadow-main;
+  overflow: hidden;
+}
