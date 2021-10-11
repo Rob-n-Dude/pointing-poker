@@ -1,5 +1,6 @@
 import { combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { chatMessagesInitial, chatMessagesReducer } from './chatMessages/reducer/chatMessagesReducer';
 import { popUpInitial, popUpReducer } from './popUp/reducer/popUpReducer';
 import { activePageReducer, pageInitial } from './activePage/reducer/activePageReducer';
 import { gameInitial, gameReducer } from './game/reducer/gameReducer';
@@ -15,6 +16,7 @@ const initialState: TStore = {
   settings: settingsInitial,
   activePage: pageInitial,
   popUp: popUpInitial,
+  chat: chatMessagesInitial,
 };
 
 const rootReducer = combineReducers({
@@ -24,6 +26,7 @@ const rootReducer = combineReducers({
   settings: settingsReducer,
   activePage: activePageReducer,
   popUp: popUpReducer,
+  chat: chatMessagesReducer,
 });
 
 const store = createStore(rootReducer, initialState, composeWithDevTools());
