@@ -1,5 +1,7 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
-import thunk from 'redux-thunk';
+import { combineReducers, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { chatMessagesInitial, chatMessagesReducer } from './chatMessages/reducer/chatMessagesReducer';
+import { popUpInitial, popUpReducer } from './popUp/reducer/popUpReducer';
 import { activePageReducer, pageInitial } from './activePage/reducer/activePageReducer';
 import { gameInitial, gameReducer } from './game/reducer/gameReducer';
 import { settingsInitial, settingsReducer } from './settings/reducer/settingsReducer';
@@ -13,9 +15,9 @@ const initialState: TStore = {
   sideBar: sideBarInitial,
   settings: settingsInitial,
   activePage: pageInitial,
+  popUp: popUpInitial,
+  chat: chatMessagesInitial,
 };
-
-const middleware = [thunk];
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -23,8 +25,10 @@ const rootReducer = combineReducers({
   sideBar: sideBarReducer,
   settings: settingsReducer,
   activePage: activePageReducer,
+  popUp: popUpReducer,
+  chat: chatMessagesReducer,
 });
 
-const store = createStore(rootReducer, initialState, applyMiddleware(...middleware));
+const store = createStore(rootReducer, initialState, composeWithDevTools());
 
 export default store;

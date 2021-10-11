@@ -1,23 +1,35 @@
-import React, { FC } from 'react';
-import { TAvatar, TUserInfo, UserRole } from '../../shared/types';
+import React, { FC, useEffect, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAllPlayers } from '../../redux/game/actions/gameActions';
+import { getPlayers } from '../../redux/game/selectors/gameSelectors';
+import { gameAPI } from '../../services/Api';
 import './scoreField.scss';
 import ScoreFieldItem from './ScoreFieldItem';
 
-const us: TUserInfo = {
-  name: 'Jon',
-  lastName: 'Sina',
-  jobPosition: 'Jun',
-  avatar: {} as TAvatar,
-  role: UserRole.dealer,
-};
-
 const ScoreField: FC = () => {
-  const allUsers: TUserInfo[] = [us, us, us, us]; // получить массив всех пользователей которые могут голосовать
+  const allUsers = useSelector(getPlayers);
+  const dispatch = useDispatch();
 
-  const showScoreCards = () => {
+  useEffect(() => {
+    gameAPI.requestPlayers();
+    return () => {
+      gameAPI.stopRecievingPlayers();
+    };
+  }, []);
+
+  const handleUsers = useCallback(() => {
+    gameAPI.recievePlayers((p) => dispatch(setAllPlayers(p)));
+  }, [dispatch]);
+
+  useEffect(() => {
+    handleUsers();
+  }, [allUsers, handleUsers]);
+
+  const showUsers = () => {
+    console.log(allUsers);
     return allUsers.map((user) => <ScoreFieldItem user={user} key={user.name} />);
   };
-  return <div className="score-field">{showScoreCards()}</div>;
+  return <div className="score-field">{showUsers()}</div>;
 };
 
 export default ScoreField;

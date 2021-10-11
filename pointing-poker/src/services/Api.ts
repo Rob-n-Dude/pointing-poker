@@ -51,6 +51,8 @@ export const gameAPI = {
 
   recievePlayers: (callBack: TAllPlayersCallBack) => socket.on('recieve-players', (players) => callBack(players)),
 
+  stopRecievingPlayers: () => socket.off('recieve-players'),
+
   requestMaster: () => socket.emit('request-master'),
 
   recieveMaster: (callBack: TMasterCallBack) => socket.on('recieve-master', (master) => callBack(master)),

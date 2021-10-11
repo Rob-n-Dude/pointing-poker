@@ -1,13 +1,26 @@
 import React, { FC, useState, useCallback, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import togglePopUpAction from '../../../../redux/popUp/actions/popUpAction';
+import { gameAPI, userApi } from '../../../../services/Api';
 import ButtonStyles from '../../../../shared/ButtonStyles';
+import { TUserInfo, UserRole } from '../../../../shared/types';
 import Button from '../../../button/Button';
 import './Form.scss';
 
-const Form: FC = () => {
+interface IForm {
+  role: UserRole;
+}
+
+const Form: FC<IForm> = ({ role }) => {
+  const history = useHistory();
   const [firstName, setFirstName] = useState<string>('');
   const [isValid, setIsValid] = useState<boolean>(true);
   const [lastName, setLastName] = useState<string>('');
   const [initials, setInitials] = useState<string>('');
+  const [job, setJob] = useState<string>('');
+
+  const dispatch = useDispatch();
 
   const validate = /^[A-Za-zа-яА-ЯёЁ]+$/;
 
@@ -18,10 +31,32 @@ const Form: FC = () => {
     return false;
   };
 
+  const closePopUp = () => {
+    dispatch(togglePopUpAction(false));
+  };
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (firstNameValidation()) {
       setIsValid(true);
+
+      const user: TUserInfo = {
+        name: firstName,
+        lastName,
+        jobPosition: job,
+        avatar: { initial: initials },
+        role,
+      };
+
+      if (user.role === UserRole.dealer) {
+        gameAPI.setMaster(user);
+        userApi.createUserRequest(user);
+      } else {
+        userApi.createUserRequest(user);
+      }
+
+      closePopUp();
+      history.push('/lobby');
     } else {
       setIsValid(false);
     }
@@ -44,8 +79,8 @@ const Form: FC = () => {
   }, [firstName, lastName, setAvatarInitials]);
 
   return (
-    <div className="form-wrap">
-      <form className="form" onSubmit={handleSubmit}>
+    <div className="popup_form-wrap">
+      <form className="popup_form" onSubmit={handleSubmit}>
         <div className="firstName">
           Your first name:
           <label className="item" htmlFor="firstName">
@@ -74,7 +109,13 @@ const Form: FC = () => {
         <div className="jobPosition">
           Your job position:
           <label className="item" htmlFor="jobPos">
-            <input className="input input_with_border longer" type="text" name="jobPos" id="jobPos" />
+            <input
+              className="input input_with_border longer"
+              type="text"
+              name="jobPos"
+              id="jobPos"
+              onChange={(e) => setJob(e.target.value)}
+            />
           </label>
         </div>
         <div className="image">
@@ -97,7 +138,7 @@ const Form: FC = () => {
           <label htmlFor="submit">
             <input id="submit" type="submit" className="input-submit default" value="Confirm" />
           </label>
-          <Button textContent="Cancel" action={() => {}} styles={ButtonStyles.white} />
+          <Button textContent="Cancel" action={closePopUp} styles={ButtonStyles.white} />
         </div>
       </form>
     </div>

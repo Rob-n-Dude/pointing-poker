@@ -9,6 +9,9 @@ export type TPopUpContent = {
   negativeAction: () => void;
 };
 
+// export type PopUpPositiveAction<T> = (user?: T) => void;
+// export type PopUpPositiveActionTypes = TUserInfo;
+
 export type TUserInfo = {
   name: string;
   lastName?: string;
@@ -28,11 +31,6 @@ export enum UserRole {
   player = 'Player',
   observer = 'Observer',
 }
-
-export type TLobby = {
-  user: TUserInfo;
-  isChat: boolean;
-};
 
 export enum ActivePages {
   greeting,

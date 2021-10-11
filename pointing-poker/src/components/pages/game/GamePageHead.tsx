@@ -24,7 +24,7 @@ const GamePageHead: FC = () => {
 
   return (
     <div className="game-page-head">
-      <LobbyMasterCard info={gamePageInfo.master} />
+      <LobbyMasterCard />
       {gamePageInfo.you.role === UserRole.dealer ? (
         <Button action={() => {}} styles={ButtonStyles.white} textContent="Stop game" /> // If you are dealer
       ) : (
