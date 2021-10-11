@@ -1,4 +1,6 @@
 import { createReducer, Action } from 'typesafe-actions';
+import { TUserInfo } from '../../../shared/types';
+import { TRound, TGame } from '../types';
 import {
   setRoundAverage,
   updateVotes,
@@ -7,9 +9,13 @@ import {
   setMaster,
   setAllPlayers,
 } from '../actions/gameActions';
-import { TGame } from '../types';
 
-export const gameInitial = {} as TGame;
+export const gameInitial = {
+  players: [] as TUserInfo[],
+  master: {} as TUserInfo,
+  rounds: [],
+  currentRound: {} as TRound,
+};
 
 export const gameReducer = createReducer<TGame, Action>(gameInitial)
   .handleAction(setAllPlayers, (state, action) => {

@@ -1,18 +1,21 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { getPlayers } from '../../../../redux/game/selectors/gameSelectors';
 import ButtonStyles from '../../../../shared/ButtonStyles';
-import { TLobby, UserRole } from '../../../../shared/types';
+import { UserRole } from '../../../../shared/types';
 import Button from '../../../button/Button';
 import LobbyMasterCard from '../../../member-card/LobbyMasterCard';
 
-const LobbyHead: React.FC<TLobby> = ({ user }): JSX.Element => {
+const LobbyHead: React.FC = (): JSX.Element => {
   const lobbyLink = 'someLink';
+  const you = useSelector(getPlayers)[0];
   return (
     <div className="lobby-head">
       <div className="lobby-head-master_card">
         <p className="lobby-head-master_card_text"> Master: </p>
-        <LobbyMasterCard info={user} />
+        <LobbyMasterCard />
       </div>
-      {user.role === UserRole.dealer ? (
+      {you?.role === UserRole.dealer ? (
         <>
           <form className="lobby-head-link">
             <label htmlFor="html-link">

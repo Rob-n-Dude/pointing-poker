@@ -11,7 +11,7 @@ type TMessage = {
 const Message: FC<TMessage> = ({ user, message, styles }) => {
   const [messageUser] = useState<TMessage>({ user, message, styles });
 
-  // TODO: need to make user verification via redax for message styles
+  // TODO: need to make user verification via redux for message styles
 
   /*   useEffect(() => {
     setMessage(message);

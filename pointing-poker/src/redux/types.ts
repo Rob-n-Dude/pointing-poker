@@ -1,3 +1,4 @@
+import { TPopUpRedux } from './popUp/types';
 import { TUserInfo } from '../shared/types';
 import { TActivePage } from './activePage/types';
 import { TGame } from './game/types';
@@ -10,4 +11,5 @@ export type TStore = {
   sideBar: TSideBar;
   settings: TLobbySettings;
   activePage: TActivePage;
+  popUp: TPopUpRedux;
 };
